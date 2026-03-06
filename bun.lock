@@ -52,6 +52,7 @@
         "js-tiktoken": "^1.0.20",
         "jsdom": "^26.1.0",
         "katex": "^0.16.10",
+        "langfuse": "^3.38.6",
         "langfuse-vercel": "^3.38.4",
         "lucide-react": "^0.507.0",
         "next": "^16.1.6",
@@ -1616,9 +1617,9 @@
 
     "kolorist": ["kolorist@1.8.0", "", {}, "sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ=="],
 
-    "langfuse": ["langfuse@3.38.4", "", { "dependencies": { "langfuse-core": "^3.38.4" } }, "sha512-2UqMeHLl3DGNX1Nh/cO4jGhk7TzDJ6gjQLlyS9rwFCKVO81xot6b58yeTsTB5YrWupWsOxQtMNoQYIQGOUlH9Q=="],
+    "langfuse": ["langfuse@3.38.6", "", { "dependencies": { "langfuse-core": "^3.38.6" } }, "sha512-mtwfsNGIYvObRh+NYNGlJQJDiBN+Wr3Hnr++wN25mxuOpSTdXX+JQqVCyAqGL5GD2TAXRZ7COsN42Vmp9krYmg=="],
 
-    "langfuse-core": ["langfuse-core@3.38.4", "", { "dependencies": { "mustache": "^4.2.0" } }, "sha512-onTAqcEGhoXuBgqDFXe2t+bt9Vi+5YChRgdz3voM49JKoHwtVZQiUdqTfjSivGR75eSbYoiaIL8IRoio+jaqwg=="],
+    "langfuse-core": ["langfuse-core@3.38.6", "", { "dependencies": { "mustache": "^4.2.0" } }, "sha512-EcZXa+DK9FJdi1I30+u19eKjuBJ04du6j2Nybk19KKCuraLczg/ppkTQcGvc4QOk//OAi3qUHrajUuV74RXsBQ=="],
 
     "langfuse-vercel": ["langfuse-vercel@3.38.4", "", { "dependencies": { "langfuse": "^3.38.4", "langfuse-core": "^3.38.4" }, "peerDependencies": { "ai": ">=3.2.44" } }, "sha512-gyhQuim2b1qpI7yiGnww9qzqsdpD59XagD+QB3eGHIrX+1ao7vbcrwL14H0GlsLIUM10Nud9wtEbxiFZP1PB7g=="],
 
@@ -2399,6 +2400,10 @@
     "fast-glob/glob-parent": ["glob-parent@5.1.2", "", { "dependencies": { "is-glob": "^4.0.1" } }, "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="],
 
     "glob/minimatch": ["minimatch@9.0.5", "", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow=="],
+
+    "langfuse-vercel/langfuse": ["langfuse@3.38.4", "", { "dependencies": { "langfuse-core": "^3.38.4" } }, "sha512-2UqMeHLl3DGNX1Nh/cO4jGhk7TzDJ6gjQLlyS9rwFCKVO81xot6b58yeTsTB5YrWupWsOxQtMNoQYIQGOUlH9Q=="],
+
+    "langfuse-vercel/langfuse-core": ["langfuse-core@3.38.4", "", { "dependencies": { "mustache": "^4.2.0" } }, "sha512-onTAqcEGhoXuBgqDFXe2t+bt9Vi+5YChRgdz3voM49JKoHwtVZQiUdqTfjSivGR75eSbYoiaIL8IRoio+jaqwg=="],
 
     "lru-cache/yallist": ["yallist@3.1.1", "", {}, "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="],
 

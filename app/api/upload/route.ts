@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 
 import { PutObjectCommand } from '@aws-sdk/client-s3'
 
-import { getCurrentUserId } from '@/lib/auth/get-current-user'
 import {
   getR2Client,
   R2_BUCKET_NAME,
@@ -14,10 +13,8 @@ const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'application/pdf']
 
 export async function POST(req: NextRequest) {
   try {
-    const userId = await getCurrentUserId()
-    if (!userId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
+    // Authentication disabled - use anonymous user
+    const userId = 'anonymous-user'
     const contentType = req.headers.get('content-type') || ''
     if (!contentType.includes('multipart/form-data')) {
       return NextResponse.json(

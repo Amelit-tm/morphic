@@ -1,7 +1,6 @@
 import { Langfuse } from 'langfuse'
 
 import { updateMessageFeedback } from '@/lib/actions/feedback'
-import { createClient } from '@/lib/supabase/server'
 import { isTracingEnabled } from '@/lib/utils/telemetry'
 
 export async function POST(req: Request) {
@@ -44,18 +43,8 @@ export async function POST(req: Request) {
     // Flush to ensure the score is sent
     await langfuse.flushAsync()
 
-    // Get current user for RLS context
-    let userId: string | null = null
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-    if (supabaseUrl && supabaseAnonKey) {
-      const supabase = await createClient()
-      const {
-        data: { user }
-      } = await supabase.auth.getUser()
-      userId = user?.id || null
-    }
+    // Authentication disabled - use anonymous user
+    const userId = 'anonymous-user'
 
     // Update the message metadata with the feedback score using the action
     if (messageId) {

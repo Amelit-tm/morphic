@@ -7,16 +7,10 @@ import { SearchMode } from '@/lib/types/search'
 import { isProviderEnabled } from '@/lib/utils/registry'
 
 const DEFAULT_MODEL: Model = {
-  id: 'gpt-5-mini',
-  name: 'GPT-5 mini',
-  provider: 'OpenAI',
-  providerId: 'openai',
-  providerOptions: {
-    openai: {
-      reasoningEffort: 'low',
-      reasoningSummary: 'auto'
-    }
-  }
+  id: 'gpt-4o-mini',
+  name: 'GPT-4o Mini',
+  provider: 'OnlySq',
+  providerId: 'onlysq'
 }
 
 const VALID_MODEL_TYPES: ModelType[] = ['speed', 'quality']

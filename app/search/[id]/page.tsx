@@ -1,19 +1,20 @@
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 
 import { UIMessage } from 'ai'
 
 import { loadChat } from '@/lib/actions/chat'
-import { getCurrentUserId } from '@/lib/auth/get-current-user'
 
 import { Chat } from '@/components/chat'
 
 export const maxDuration = 60
 
+// Anonymous user ID for all requests
+const userId = 'anonymous-user'
+
 export async function generateMetadata(props: {
   params: Promise<{ id: string }>
 }) {
   const { id } = await props.params
-  const userId = await getCurrentUserId()
 
   const chat = await loadChat(id, userId)
 
@@ -30,7 +31,6 @@ export default async function SearchPage(props: {
   params: Promise<{ id: string }>
 }) {
   const { id } = await props.params
-  const userId = await getCurrentUserId()
 
   const chat = await loadChat(id, userId)
 
@@ -38,11 +38,8 @@ export default async function SearchPage(props: {
     notFound()
   }
 
-  if (chat.visibility === 'private' && !userId) {
-    redirect('/auth/login')
-  }
-
   const messages: UIMessage[] = chat.messages
 
-  return <Chat id={id} savedMessages={messages} isGuest={!userId} />
+  // Authentication disabled - all users have full access
+  return <Chat id={id} savedMessages={messages} isGuest={false} />
 }
